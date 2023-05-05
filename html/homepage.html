@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <title>Project</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="brand">Project</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+          <div class="navigation-items">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Gallery</a>
+            <a href="signup.html">Signup</a>
+            <a href="signin.html">Login</a>
+          </div>
+        </div>
+      </header>
+  
+      <section class="home">
+        <video class="video-slide active" src="Images/1.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="Images/2.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="Images/3.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="Images/4.mp4" autoplay muted loop></video>
+        <div class="content active">
+          <h1>Chest<br><span>X-Ray</span></h1>
+          <p>
+              A chest X-ray is a non-invasive medical imaging test that uses low-dose radiation to create pictures of the structures inside the chest, including the heart, lungs, and blood vessels. It is often used to diagnose and monitor conditions such as pneumonia, lung cancer, and heart failure.</p>
+          
+        </div>
+        <div class="content">
+          <h1>Pneumonia<br><span>X-Ray</span></h1>
+          <p>
+              Pneumonia on a chest X-ray typically appears as an area of opacity, or whiteness, in the lung tissue, which can indicate inflammation, fluid buildup, or infection. The exact appearance of pneumonia on an X-ray can vary depending on the type of pneumonia, the stage of the infection, and other factors.</p>
+        </div>
+        <div class="content">
+          <h1>Tuberculosis<br><span>X-Ray</span></h1>
+          <p> Tuberculosis (TB) may appear as nodules, infiltrates, or cavities in the lungs. These abnormalities are often located in the upper lobes of the lungs and can indicate an active or past TB infection.</p>
+        </div>
+        <div class="content">
+          <h1>Covid-19<br><span>X-Ray</span></h1>
+          <p>Chest X-rays are not typically used as a primary diagnostic tool for COVID-19, but in cases where they are used, they may show ground-glass opacities or consolidation in the lungs, which can indicate pneumonia or other respiratory complications associated with the virus. However, a positive COVID-19 diagnosis is usually confirmed through laboratory testing.</p>
+          
+        </div>
+        <div class="media-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="slider-navigation">
+          <div class="nav-btn active"></div>
+          <div class="nav-btn"></div>
+          <div class="nav-btn"></div>
+          <div class="nav-btn"></div>
+        </div>
+      </section>
+  
+      <script type="text/javascript">
+      //Javacript for responsive navigation menu
+      const menuBtn = document.querySelector(".menu-btn");
+      const navigation = document.querySelector(".navigation");
+  
+      menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+      });
+  
+      //Javacript for video slider navigation
+      const btns = document.querySelectorAll(".nav-btn");
+      const slides = document.querySelectorAll(".video-slide");
+      const contents = document.querySelectorAll(".content");
+  
+      var sliderNav = function(manual){
+        btns.forEach((btn) => {
+          btn.classList.remove("active");
+        });
+  
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+  
+        contents.forEach((content) => {
+          content.classList.remove("active");
+        });
+  
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+      }
+  
+      btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          sliderNav(i);
+        });
+      });
+      </script>
+</body>
+</html>
